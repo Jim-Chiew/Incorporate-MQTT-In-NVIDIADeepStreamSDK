@@ -157,8 +157,9 @@ docker exec -it NVIDIADeepStreamSDK /bin/bash
 ```  
 
 Next change to the home directory and repeat the installation of paho:
-Note: you should be root, thus sudo is not required.
+Note that if the container were to be repulled or remove, you will need to repeat this step again.   
 
+You also should be root, thus sudo is not required.
 Cd to home:
 ```
 cd ~
@@ -192,7 +193,7 @@ make install
 You could use the same paho [command utilities](https://github.com/Jim-Chiew/Incorporate-MQTT-In-NVIDIADeepStreamSDK/edit/main/README.md#:~:text=command%20line%20utilities) within the container to test your paho.
 
 ## Modifying deepstream-test5-app.c to publish MQTT:
-The mqtt publishing code was based on the resource [Paho MQTT C Client Library](https://www.eclipse.org/paho/files/mqttdoc/MQTTClient/html/pubsync.html). I recommend modify and changing the provided pahoTest.c file first before incorporating it in the deepstream SDK.
+The mqtt publishing code was based on the resource [Paho MQTT C Client Library](https://www.eclipse.org/paho/files/mqttdoc/MQTTClient/html/pubsync.html). I recommend modify and changing the provided [pahoTest.c](https://github.com/Jim-Chiew/Incorporate-MQTT-In-NVIDIADeepStreamSDK/blob/main/pahotest.c) file first before incorporating it in the deepstream SDK.
 
 To compile pahoTest.C file. You need to link the supporting libraries with the `-L<Path>` followed by the option `-lpaho-mqtt3c`:
 ```
@@ -212,7 +213,7 @@ cd /opt/nvidia/deepstream/deepstream-6.0/sources/apps/sample_apps/deepstream-tes
 Extract the file or modify it with your preferred method.
 
 ### Adding per object counter in deepstream-test5-app.c
-you would first need to define some variables first. In the provided deepstream-test5-app.c, it is done in `line 185`. I have 4 objects that I want to detect and count with a char variable to hold the output message of the mqtt payload:
+you would first need to define some variables first. In the provided [deepstream-test5-app.c](https://github.com/Jim-Chiew/Incorporate-MQTT-In-NVIDIADeepStreamSDK/blob/main/deepstream_test5_app_main.c), it is done in `line 185`. I have 4 objects that I want to detect and count with a char variable to hold the output message of the mqtt payload:
 ```c
 /* Jim Counter Initialize*/
 int Circle;
@@ -222,7 +223,7 @@ int Triangle;
 char mqttOutput[200];
 ```
 
-Next is to set a reset to reset the counter of a new frame. This is done in `line 615`:
+Next is to set a reset to reset the counter on a new frame. This is done in `line 615`:
 ```c
   Circle = 0; //By JIM reset counter
   Heart = 0;
@@ -244,7 +245,9 @@ For each object, identify the object and increment the corresponding counter. Do
       }
 ```  
 
-Finally, format and string output and publish the MQTT massage. Done in `line 730`:
+The object ID is based on the `labels.txt` file in `/data/misc/storage/Intelligent-Video-Analytics-with-NVIDIA-Jetson-and-Microsoft-Azure/services/CUSTOM_VISION_AI/`
+
+Finally, format the string output and publish the MQTT massage. Done in `line 730`:
 ```c
   /*Publish to MQTT By JIM*/
     pubmsg.payload;
@@ -258,7 +261,7 @@ Finally, format and string output and publish the MQTT massage. Done in `line 73
 ```
 
 ### Incorporating MQTT in deepstream-test5-app.c:
-You would first need to include and define some variables first. In the provided deepstream-test5-app.c, it is done in `line 54`:
+You would first need to include and define some variables first. In the provided [deepstream-test5-app.c](https://github.com/Jim-Chiew/Incorporate-MQTT-In-NVIDIADeepStreamSDK/blob/main/deepstream_test5_app_main.c), it is done in `line 54`:
 ```c
 /* Paho */
 #include "MQTTClient.h"
@@ -304,7 +307,7 @@ Disconnect and Destroy Client in `line 1680`:
 ```
 
 ### Compiling deepstream-test5-app.c:
-To compile deepstream-test5-app.c, you first need to modify the `Makefile` to add the supporting library. You can refer to the Makefile provided.
+To compile deepstream-test5-app.c, you first need to modify the `Makefile` to add the supporting library. You can refer to the [Makefile](https://github.com/Jim-Chiew/Incorporate-MQTT-In-NVIDIADeepStreamSDK/blob/main/Makefile) provided.
 
 Add the following code in a new line after `LIBS:= -L/usr/local/cuda-$(CUDA_VER)/lib64/ -lcudart` or at `line 57`:
 ```c
@@ -353,6 +356,7 @@ sudo docker restart NVIDIADeepStreamSDK
 
 After the restart, your NVIDIADeepStreamSDK should be publishing the MQTT massages.
 
+I have created a simple script file that automate creating and moving of deepstream-test5-app. You would still need to remove the deepstream-test5-app file in the container first. Script: [MakeAndMove.sh](https://github.com/Jim-Chiew/Incorporate-MQTT-In-NVIDIADeepStreamSDK/blob/main/MakeAndMove.sh)
 
 ## Installing Node-Red with Docker:
 Node-RED is a flow-based development tool for visual programming developed originally by IBM for wiring together hardware devices, APIs and online services as part of the Internet of Things.
