@@ -15,10 +15,6 @@ At this point, you should have set up iotedge that is running  NVIDIADeepStreamS
 The MQTT protocol provides a lightweight method of carrying out messaging using a publish/subscribe model. Eclipse Mosquitto is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 5.0, 3.1.1 and 3.1.
 
 Installing MQTT Broker with the following command:
-adding required APT repository:
-```
-sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
-```
 
 Update software packages with:
 ```
@@ -34,6 +30,17 @@ Install mosquitto-clients:
 ```
 sudo apt-get install mosquitto-clients
 ```
+
+Test mosquitto by first subscribing to start listen with the following command:
+```
+mosquitto_sub -t "test"
+```
+
+Publishing a massage with the following command:
+```
+mosquitto_pub -m "message from mosquitto_pub client" -t "test"
+```
+
 
 ### Installing Paho MQTT C Client on the Jetson:
 The Paho MQTT C Client is a fully featured MQTT client written in ANSI standard C. 
@@ -384,7 +391,8 @@ http://<IP Address off Jetson>:1880
 
 From here, you are able to set up a simple listener and function nodes to publish to a database using APIs.
 
-## Reference:
+## Reference:  
+https://www.vultr.com/docs/how-to-install-mosquitto-mqtt-broker-server-on-ubuntu-16-04/  
 https://mosquitto.org/  
 http://www.steves-internet-guide.com/install-mosquitto-linux/  
 https://www.eclipse.org/paho/index.php?page=clients/c/index.php  
