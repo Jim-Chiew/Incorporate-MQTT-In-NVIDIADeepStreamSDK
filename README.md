@@ -16,7 +16,7 @@ The MQTT protocol provides a lightweight method of carrying out messaging using 
 
 Installing MQTT Broker with the following command:
 
-Update software packages with:
+Resynchronize the package index fileswith:
 ```
 sudo apt-get update
 ```
