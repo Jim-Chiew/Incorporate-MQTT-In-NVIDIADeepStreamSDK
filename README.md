@@ -85,7 +85,7 @@ paho_c_sub -t my_topic --connection tcp://localhost:1883
 From here, start typing and entering the terminal with the paho_c_pub. You should see the massages in the terminal with paho_c_sub. To exit, use CTRL+C.  
 Note: C clients has to connect to a broker over a TCP/IP connection.  
 
-At this point, if you are running Deepstream without using iotedge, you can proceed straight to modifying the deepstream-test5-app file [here](https://github.com/Jim-Chiew/Incorporate-MQTT-In-NVIDIADeepStreamSDK/edit/main/README.md#modifying-deepstream-test5-appc-to-publish-mqtt).  
+At this point, if you are running Deepstream without using iotedge, you can proceed straight to modifying the deepstream-test5-app file [here](https://github.com/Jim-Chiew/Incorporate-MQTT-In-NVIDIADeepStreamSDK#modifying-deepstream-test5-appc-to-publish-mqtt).  
   
   
 ### Installing Paho MQTT C Client on the NVIDIADeepStreamSDK Docker container:
