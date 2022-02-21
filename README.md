@@ -23,12 +23,12 @@ sudo apt-get update
 
 Install mosquitto:
 ```
-sudo apt-get install mosquitto
+sudo apt install mosquitto
 ```
 
 Install mosquitto-clients:
 ```
-sudo apt-get install mosquitto-clients
+sudo apt install mosquitto-clients
 ```
 
 Test mosquitto by first subscribing to start listen with the following command:
@@ -394,6 +394,7 @@ From here, you are able to set up a simple listener and function nodes to publis
 ## Reference:  
 https://www.vultr.com/docs/how-to-install-mosquitto-mqtt-broker-server-on-ubuntu-16-04/  
 https://mosquitto.org/  
+https://www.arubacloud.com/tutorial/how-to-install-and-secure-mosquitto-on-ubuntu-20-04.aspx  
 http://www.steves-internet-guide.com/install-mosquitto-linux/  
 https://www.eclipse.org/paho/index.php?page=clients/c/index.php  
 https://nodered.org/docs/getting-started/docker
