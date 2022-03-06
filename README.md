@@ -351,7 +351,7 @@ Remove old deepstream-test5-app
 rm deepstream-test5-app
 ```
 
-**In your host(Jetson) terminal**, navigate back to `/opt/nvidia/deepstream/deepstream-6.0/bin/deepstream-test5-app` and copy the file over to the container with the following command:
+**In your host(Jetson) terminal**, navigate back to `/opt/nvidia/deepstream/deepstream-6.0/sources/apps/sample_apps/deepstream-test5` and copy the file over to the container with the following command:
 ```
 sudo docker cp deepstream-test5-app NVIDIADeepStreamSDK:/opt/nvidia/deepstream/deepstream-6.0/bin/
 ```
