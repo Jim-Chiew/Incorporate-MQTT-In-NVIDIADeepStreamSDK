@@ -398,3 +398,4 @@ https://www.arubacloud.com/tutorial/how-to-install-and-secure-mosquitto-on-ubunt
 http://www.steves-internet-guide.com/install-mosquitto-linux/  
 https://www.eclipse.org/paho/index.php?page=clients/c/index.php  
 https://nodered.org/docs/getting-started/docker
+https://docs.nvidia.com/metropolis/deepstream/sdk-api/struct__NvDsObjectMeta.html  
