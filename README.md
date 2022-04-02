@@ -397,5 +397,5 @@ https://mosquitto.org/
 https://www.arubacloud.com/tutorial/how-to-install-and-secure-mosquitto-on-ubuntu-20-04.aspx  
 http://www.steves-internet-guide.com/install-mosquitto-linux/  
 https://www.eclipse.org/paho/index.php?page=clients/c/index.php  
-https://nodered.org/docs/getting-started/docker
+https://nodered.org/docs/getting-started/docker  
 https://docs.nvidia.com/metropolis/deepstream/sdk-api/struct__NvDsObjectMeta.html  
