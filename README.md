@@ -36,7 +36,7 @@ Test mosquitto by first subscribing to start listen with the following command:
 mosquitto_sub -t "test"
 ```
 
-Publishing a massage with the following command:
+Publishing a massage with the following command in a new terminal:
 ```
 mosquitto_pub -m "message from mosquitto_pub client" -t "test"
 ```
