@@ -36,7 +36,7 @@ Test mosquitto by first subscribing to start listen with the following command:
 mosquitto_sub -t "test"
 ```
 
-Publishing a massage with the following command in a new terminal:
+Publishing a massage with the following command in a new terminal. You should see the output on the mosquitto_sub terminal:
 ```
 mosquitto_pub -m "message from mosquitto_pub client" -t "test"
 ```
@@ -71,15 +71,14 @@ Install:
 sudo make install
 ```
 
-You are able to test your paho installation with paho command line utilities for subscribing and publishing mqtt messages.
-Assuming mosquitto as been installed, start publishing a massage with the following command:
-```
-paho_c_pub -t my_topic --connection tcp://localhost:1883
-```
-
-In a new terminal, use the following command to subscribe/listen to the publishing:
+You are able to test your paho installation with paho command line utilities for subscribing and publishing mqtt messages. In a new terminal, use the following command to subscribe/listen to the publishing:
 ```
 paho_c_sub -t my_topic --connection tcp://localhost:1883
+```
+
+Assuming mosquitto as been installed, start publishing a massage with the following command on a new terminal:
+```
+paho_c_pub -t my_topic --connection tcp://localhost:1883
 ```
 
 From here, start typing and entering the terminal with the paho_c_pub. You should see the massages in the terminal with paho_c_sub. To exit, use CTRL+C.  
