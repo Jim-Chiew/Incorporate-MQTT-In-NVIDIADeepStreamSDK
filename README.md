@@ -251,7 +251,7 @@ For each object, identify the object and increment the corresponding counter. Do
       }
 ```  
 
-The object ID is based on the `labels.txt` file in `/data/misc/storage/Intelligent-Video-Analytics-with-NVIDIA-Jetson-and-Microsoft-Azure/services/CUSTOM_VISION_AI/`
+The object ID is based on the `labels.txt` file in `/data/misc/storage/Intelligent-Video-Analytics-with-NVIDIA-Jetson-and-Microsoft-Azure/services/CUSTOM_VISION_AI/`. In the labels.txt, the first object will have the ID starting with 0.
 
 Finally, format the string output and publish the MQTT massage. Done in `line 730`:
 ```c
