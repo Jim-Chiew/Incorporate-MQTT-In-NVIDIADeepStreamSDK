@@ -199,7 +199,7 @@ make install
 You could use the same paho [command utilities](https://github.com/Jim-Chiew/Incorporate-MQTT-In-NVIDIADeepStreamSDK#:~:text=You%20are%20able%20to%20test%20your%20paho%20installation%20with%20paho%20command%20line%20utilities%20for%20subscribing%20and%20publishing%20mqtt%20messages.%20Assuming%20mosquitto%20as%20been%20installed%2C%20start%20publishing%20a%20massage%20with%20the%20following%20command%3A) within the container to test your paho.
 
 ## Modifying deepstream-test5-app.c to publish MQTT:
-The mqtt publishing code was based on the resource [Paho MQTT C Client Library](https://www.eclipse.org/paho/files/mqttdoc/MQTTClient/html/pubsync.html). I recommend modify and changing the provided [pahoTest.c](https://github.com/Jim-Chiew/Incorporate-MQTT-In-NVIDIADeepStreamSDK/blob/main/pahotest.c) file first before incorporating it in the deepstream SDK.
+The mqtt publishing code was based on the resource [Paho MQTT C Client Library](https://www.eclipse.org/paho/files/mqttdoc/MQTTClient/html/pubsync.html). I recommend modify and changing the provided [pahoTest.c](https://github.com/Jim-Chiew/Incorporate-MQTT-In-NVIDIADeepStreamSDK/blob/main/pahotest.c) file first before incorporating the codes in the deepstream SDK. `pahoTest.c` will publish a single massage to the specified mqtt broker.
 
 To compile pahoTest.C file. You need to link the supporting libraries with the `-L<Path>` followed by the option `-lpaho-mqtt3c`:
 ```
